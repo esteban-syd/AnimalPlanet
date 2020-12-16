@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CONSULTAModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="IDCLIENTE" />
+          </Key>
+          <Property Name="IDCLIENTE" Type="int" Nullable="false" />
+          <Property Name="IDMASCOTA" Type="int" />
+          <Property Name="EDAD_C" Type="int" />
+          <Property Name="RUT" Type="varchar" MaxLength="13" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="40" />
+          <Property Name="PAGO" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="MASCOTA">
+          <Key>
+            <PropertyRef Name="IDMASCOTA" />
+          </Key>
+          <Property Name="IDMASCOTA" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="40" />
+          <Property Name="EDAD" Type="int" />
+          <Property Name="RAZA" Type="varchar" MaxLength="50" />
+          <Property Name="ESTERILIZADO" Type="varchar" MaxLength="10" />
+          <Property Name="SEXO" Type="varchar" MaxLength="10" />
+          <Property Name="TIPO_ATENCION" Type="varchar" MaxLength="10" />
+          <Property Name="FECHA_NACIMIENTO" Type="date" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__CLIENTE__IDMASCO__1273C1CD">
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MASCOTA">
+              <PropertyRef Name="IDMASCOTA" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="IDMASCOTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CONSULTAModelStoreContainer">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MASCOTA" EntityType="Self.MASCOTA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__CLIENTE__IDMASCO__1273C1CD" Association="Self.FK__CLIENTE__IDMASCO__1273C1CD">
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CONSULTAModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENTE">
+          <Key>
+            <PropertyRef Name="IDCLIENTE" />
+          </Key>
+          <Property Name="IDCLIENTE" Type="Int32" Nullable="false" />
+          <Property Name="IDMASCOTA" Type="Int32" />
+          <Property Name="EDAD_C" Type="Int32" />
+          <Property Name="RUT" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="PAGO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MASCOTA" Relationship="Self.FK__CLIENTE__IDMASCO__1273C1CD" FromRole="CLIENTE" ToRole="MASCOTA" />
+        </EntityType>
+        <EntityType Name="MASCOTA">
+          <Key>
+            <PropertyRef Name="IDMASCOTA" />
+          </Key>
+          <Property Name="IDMASCOTA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="EDAD" Type="Int32" />
+          <Property Name="RAZA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ESTERILIZADO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SEXO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TIPO_ATENCION" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_NACIMIENTO" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CLIENTE" Relationship="Self.FK__CLIENTE__IDMASCO__1273C1CD" FromRole="MASCOTA" ToRole="CLIENTE" />
+        </EntityType>
+        <Association Name="FK__CLIENTE__IDMASCO__1273C1CD">
+          <End Role="MASCOTA" Type="Self.MASCOTA" Multiplicity="0..1" />
+          <End Role="CLIENTE" Type="Self.CLIENTE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MASCOTA">
+              <PropertyRef Name="IDMASCOTA" />
+            </Principal>
+            <Dependent Role="CLIENTE">
+              <PropertyRef Name="IDMASCOTA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CONSULTAEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENTE" EntityType="Self.CLIENTE" />
+          <EntitySet Name="MASCOTA" EntityType="Self.MASCOTA" />
+          <AssociationSet Name="FK__CLIENTE__IDMASCO__1273C1CD" Association="Self.FK__CLIENTE__IDMASCO__1273C1CD">
+            <End Role="MASCOTA" EntitySet="MASCOTA" />
+            <End Role="CLIENTE" EntitySet="CLIENTE" />
+          </AssociationSet>
+          <EntitySet Name="usuario" EntityType="CONSULTAModel.usuario" />
+        </EntityContainer>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CONSULTAModelStoreContainer" CdmEntityContainer="CONSULTAEntities1">
+          <EntitySetMapping Name="CLIENTE">
+            <EntityTypeMapping TypeName="CONSULTAModel.CLIENTE">
+              <MappingFragment StoreEntitySet="CLIENTE">
+                <ScalarProperty Name="IDCLIENTE" ColumnName="IDCLIENTE" />
+                <ScalarProperty Name="IDMASCOTA" ColumnName="IDMASCOTA" />
+                <ScalarProperty Name="EDAD_C" ColumnName="EDAD_C" />
+                <ScalarProperty Name="RUT" ColumnName="RUT" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="PAGO" ColumnName="PAGO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MASCOTA">
+            <EntityTypeMapping TypeName="CONSULTAModel.MASCOTA">
+              <MappingFragment StoreEntitySet="MASCOTA">
+                <ScalarProperty Name="IDMASCOTA" ColumnName="IDMASCOTA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="EDAD" ColumnName="EDAD" />
+                <ScalarProperty Name="RAZA" ColumnName="RAZA" />
+                <ScalarProperty Name="ESTERILIZADO" ColumnName="ESTERILIZADO" />
+                <ScalarProperty Name="SEXO" ColumnName="SEXO" />
+                <ScalarProperty Name="TIPO_ATENCION" ColumnName="TIPO_ATENCION" />
+                <ScalarProperty Name="FECHA_NACIMIENTO" ColumnName="FECHA_NACIMIENTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="CONSULTAModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,98 @@
+﻿<mah:MetroWindow x:Class="Animal.Presentacionn.cliente"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Animal.Presentacionn"
+        mc:Ignorable="d"
+        Title="Cliente"  Height="450" Width="828.333" WindowStartupLocation="CenterScreen" >
+    <Grid Margin="0,1,77.333,-0.333">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="96*"/>
+            <ColumnDefinition Width="573*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="IMG/veterinarios.png"/>
+        </Grid.Background>
+        <Label Content="Id Usuario" HorizontalAlignment="Left" Margin="40,62,0,0" VerticalAlignment="Top" Width="109" FontWeight="Bold" FontFamily="Engravers MT" Grid.ColumnSpan="2"/>
+        <Label Content=" nombre dueño" HorizontalAlignment="Left" Margin="40,150,0,0" VerticalAlignment="Top" FontFamily="Engravers MT" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <Label Content="Rut" HorizontalAlignment="Left" Margin="40,120,0,0" VerticalAlignment="Top" FontFamily="Engravers MT" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <Label Content="Medio de Pago" HorizontalAlignment="Left" Margin="40,209,0,0" VerticalAlignment="Top" FontFamily="Engravers MT" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <TextBox x:Name="TxtIdU" HorizontalAlignment="Left"  mah:TextBoxHelper.ClearTextButton="True" Height="23" Margin="39.334,62,0,0" mah:TextBoxHelper.Watermark="Ingrese ID" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" BorderBrush="#FF0F0606" Grid.Column="2"/>
+        <TextBox x:Name="TxtNombreD" mah:TextBoxHelper.ClearTextButton="True" mah:TextBoxHelper.Watermark="Nombre y Apellido" HorizontalAlignment="Left" Height="23" Margin="37.334,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" BorderBrush="#FF0F0606" Grid.Column="2"/>
+        <TextBox x:Name="TxtRut" HorizontalAlignment="Left" mah:TextBoxHelper.Watermark="Ingrese Rut" mah:TextBoxHelper.ClearTextButton="True" Height="23" Margin="38.334,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" BorderBrush="#FF0F0606" CaretBrush="Black" SelectionBrush="{x:Null}" Grid.Column="2"/>
+        <ComboBox x:Name="cmbPago" HorizontalAlignment="Left" Margin="39.334,209,0,0" VerticalAlignment="Top" Width="152" BorderBrush="White" Grid.Column="2">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="Gray" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Button x:Name="btnCrear" Content="Crear" HorizontalAlignment="Left" Margin="469.334,60,-31.334,0" VerticalAlignment="Top" Width="135" Height="25" Click="BtnCrear_Click" BorderBrush="#FFFF9000" FontWeight="Bold" Foreground="#FFFF9C00" FontFamily="Engravers MT" Grid.Column="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF1D00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Left" Margin="469.334,89,-31.334,0" VerticalAlignment="Top" Width="135" Height="26" Click="BtnModificar_Click" BorderBrush="#FFFF9000" FontWeight="Bold" Foreground="#FFFF9C00" FontFamily="Engravers MT" Grid.Column="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF1D00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnEliminar" Content="Eliminar " HorizontalAlignment="Left" Margin="469.334,119,-31.334,0" VerticalAlignment="Top" Width="135" Height="25" Click="BtnEliminar_Click" BorderBrush="#FFFF9000" FontWeight="Bold" Foreground="#FFFF9C00" FontFamily="Engravers MT" Grid.Column="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF1D00FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="131" Margin="460.334,277,-22.334,0" VerticalAlignment="Top" Width="135" Source="IMG/descarga.jpg" Grid.Column="2"/>
+        <Label Content="Datos de cliente" HorizontalAlignment="Left" Margin="40,253,0,0" VerticalAlignment="Top" Width="189" FontFamily="Engravers MT" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <Label Content="Ingreso dueño de mascota " HorizontalAlignment="Left" Margin="40,20,0,0" VerticalAlignment="Top" Width="340" FontFamily="Engravers MT" FontWeight="Bold" FontSize="14" Grid.ColumnSpan="3"/>
+        <Image HorizontalAlignment="Left" Height="115" Margin="460.334,253,-13.334,0" VerticalAlignment="Top" Width="126" Source="IMG/CAT&amp;DOG.jpg" Grid.Column="2">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="IMG/CAT&amp;DOG.jpg"/>
+            </Image.OpacityMask>
+        </Image>
+        <Label Content="Edad" HorizontalAlignment="Left" Margin="40,90,0,0" VerticalAlignment="Top" FontFamily="Engravers MT" FontWeight="Bold" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TxtEdad" mah:TextBoxHelper.ClearTextButton="True" HorizontalAlignment="Left" mah:TextBoxHelper.Watermark="Ingrese Edad" Height="23" Margin="38.334,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153" BorderBrush="#FF0F0606" Grid.Column="2"/>
+        <Button x:Name="btnBuscar" Content="Buscar" Margin="0,184,-25.334,0" VerticalAlignment="Top" Width="130" Height="27" BorderBrush="#FFFF9000" FontWeight="Bold" HorizontalAlignment="Right" FontFamily="Engravers MT" Click="BtnBuscar_Click" Foreground="#FFFF9000" Grid.Column="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.041"/>
+                    <GradientStop Color="#FF190FA6"/>
+                    <GradientStop Color="#FF1D00FF" Offset="0.58"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnMostrar" Content="Mostrar" HorizontalAlignment="Left" Margin="469.334,149,-31.334,0" VerticalAlignment="Top" Width="135" Height="30" Click="BtnMostrar_Click" Foreground="#FFFF9000" FontFamily="Engravers MT" FontWeight="Bold" Grid.Column="2">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF0600FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="(con apellido)" HorizontalAlignment="Left" Margin="40,171,0,0" VerticalAlignment="Top" Width="146" RenderTransformOrigin="0.519,0.579" FontFamily="Engravers MT" FontWeight="Bold" Grid.ColumnSpan="3"/>
+        <DataGrid x:Name="dgtDueñoMascota"  ItemsSource="{Binding People}" HorizontalAlignment="Left" Height="103" Margin="24,282,0,0" VerticalAlignment="Top" Width="601" Grid.ColumnSpan="3" Background="Gray"/>
+        <Button x:Name="btnVolverClli" Content="Volver" Grid.Column="2" HorizontalAlignment="Left" Margin="470.334,226,-23.334,0" VerticalAlignment="Top" Width="126" RenderTransformOrigin="0.302,0.012" BorderBrush="#FFFF9000" Foreground="#FFFF9000" FontFamily="Engravers MT" Click="BtnVolverClli_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="#FF0600FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</mah:MetroWindow>

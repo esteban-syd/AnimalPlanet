@@ -1,0 +1,33 @@
+﻿<mah:MetroWindow x:Class="Animal.Presentacionn.Login"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Animal.Presentacionn"
+        mc:Ignorable="d"
+        Title="Login" Height="351" Width="458.333" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="36*"/>
+            <ColumnDefinition Width="77*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="161*"/>
+            <RowDefinition Height="160*"/>
+        </Grid.RowDefinitions>
+        <Image Height="320" VerticalAlignment="Top" Margin="0,0,1.334,0" Source="IMG/inicio.png" Stretch="Fill" StretchDirection="UpOnly" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Margin="122,103,0,0" VerticalAlignment="Top" Width="80" OpacityMask="#FFDF1A1A" Foreground="#FF350303" FontFamily="Mistral" FontSize="24" Grid.ColumnSpan="2"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Margin="116,131,0,0" VerticalAlignment="Top" FontFamily="Mistral" FontSize="24" Foreground="#FF350303" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txtUser" HorizontalAlignment="Left" Height="18" Margin="86.444,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" Grid.Column="1"/>
+        <PasswordBox x:Name="txtPass" HorizontalAlignment="Left" Margin="86.444,143,0,0" VerticalAlignment="Top" Width="115" Grid.RowSpan="2" Grid.Column="1"/>
+        <Image HorizontalAlignment="Left" Height="70" Margin="10,79.667,0,0" VerticalAlignment="Top" Width="80" Source="IMG/veterinarios.png" Grid.Row="1"/>
+        <Button x:Name="btnAceptarUser" Content="Aceptar" HorizontalAlignment="Left" Margin="177.444,53.667,0,0" VerticalAlignment="Top" Width="75" Background="{x:Null}" BorderBrush="#FFF7F4F4" Foreground="#FFF1E8E8" FontFamily="Showcard Gothic" Click="BtnAceptarUser_Click" Grid.Row="1" Grid.Column="1"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="110.444,68,0,0" VerticalAlignment="Top" Width="74" Background="{x:Null}" FontFamily="Mistral" FontSize="24" Foreground="#FF300101" Grid.Column="1"/>
+        <TextBox x:Name="txtArea" HorizontalAlignment="Left" Height="17" Margin="304.444,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="2" Grid.Column="1"/>
+        <Image HorizontalAlignment="Left" Height="62" Margin="95.444,18,0,0" VerticalAlignment="Top" Width="73" Stretch="Fill" Source="IMG/User-Profile.png" Grid.Column="1"/>
+
+    </Grid>
+</mah:MetroWindow>
